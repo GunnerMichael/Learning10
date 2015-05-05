@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Learning10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Learning10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid x:Name="testGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowsSizes">
+                <VisualState x:Name="small">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320">
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="testGrid.Background" Value="Red"></Setter>
+                    </VisualState.Setters>
+
+                </VisualState>
+                <VisualState x:Name="medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720">
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="testGrid.Background" Value="Blue"></Setter>
+                    </VisualState.Setters>
+
+                </VisualState>
+
+                <VisualState x:Name="large">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024">
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="testGrid.Background" Value="Green"></Setter>
+                    </VisualState.Setters>
+
+                </VisualState>
+
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <RelativePanel Margin="20">
+            <TextBox x:Name="enterName" RelativePanel.AlignLeftWithPanel="True" Header="What is your name?" MaxLength="64" MaxWidth="200" MinWidth="200">                
+            </TextBox>
+            <TextBox x:Name="age" RelativePanel.Below="enterName" Header="What is your age?" MaxLength="3"/>
+
+        </RelativePanel>
+    </Grid>
+</Page>
